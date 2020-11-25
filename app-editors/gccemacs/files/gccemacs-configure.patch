@@ -1,0 +1,47 @@
+diff --git a/configure.ac b/configure.ac
+index 100fbba06c..d7d4115fb7 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -23,7 +23,7 @@
+ 
+ AC_PREREQ(2.65)
+ dnl Note this is parsed by (at least) make-dist and lisp/cedet/ede/emacs.el.
+-AC_INIT(GNU Emacs, 28.0.50, bug-gnu-emacs@gnu.org, , https://www.gnu.org/software/emacs/)
++AC_INIT(GNU Emacs, 28.0.50, bug-gnu-emacs@gnu.org, , https://www.gnu.org/software/gccemacs/)
+ 
+ dnl Set emacs_config_options to the options of 'configure', quoted for the shell,
+ dnl and then quoted again for a C string.  Separate options with spaces.
+@@ -188,14 +188,14 @@
+ dnl (autoconf) Installation Directory Variables
+ dnl See also epaths.h below.
+ lispdirrel='${version}/lisp'
+-lispdir='${datadir}/emacs/'${lispdirrel}
++lispdir='${datadir}/gccemacs/'${lispdirrel}
+ standardlisppath='${lispdir}'
+-locallisppath='${datadir}/emacs/${version}/site-lisp:'\
+-'${datadir}/emacs/site-lisp'
++locallisppath='${datadir}/gccemacs/${version}/site-lisp:'\
++'${datadir}/gccemacs/site-lisp'
+ lisppath='${locallisppath}:${standardlisppath}'
+-etcdir='${datadir}/emacs/${version}/etc'
+-archlibdir='${libexecdir}/emacs/${version}/${configuration}'
+-etcdocdir='${datadir}/emacs/${version}/etc'
++etcdir='${datadir}/gccemacs/${version}/etc'
++archlibdir='${libexecdir}/gccemacs/${version}/${configuration}'
++etcdocdir='${datadir}/gccemacs/${version}/etc'
+ gamedir='${localstatedir}/games/emacs'
+ 
+ dnl Special option to disable the most of other options.
+ 
+@@ -5965,9 +5965,9 @@ m4_define
+ dnl See comments for etc-refcards-emacsver.tex.
+ dnl Since we get a doc/emacs directory generated anyway, for the Makefile,
+ dnl it is not quite the same.  But we are generating in $srcdir.
+-AC_CONFIG_COMMANDS([doc/emacs/emacsver.texi], [
++AC_CONFIG_COMMANDS([doc/gccemacs/emacsver.texi], [
+ ${MAKE-make} -s --no-print-directory -C doc/emacs doc-emacsver || \
+-AC_MSG_ERROR(['doc/emacs/emacsver.texi' could not be made.])
++AC_MSG_ERROR(['doc/gccemacs/emacsver.texi' could not be made.])
+ ])
+ 
+ dnl If we give this the more natural name, etc/refcards/emacsver.texi,
