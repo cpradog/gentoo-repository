@@ -293,10 +293,9 @@ src_configure() {
 		${myconf}
 }
 
-#src_compile() {
-#	# Disable sandbox when dumping. For the unbelievers, see bug #131505
-#	emake RUN_TEMACS="SANDBOX_ON=0 LD_PRELOAD= env ./temacs"
-#}
+src_compile() {
+	emake NATIVE_FULL_AOT=1
+}
 
 src_install() {
 	emake DESTDIR="${D}" NO_BIN_LINK=t install
