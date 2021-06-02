@@ -3,22 +3,22 @@
 
 EAPI=7
 
-PYTHON_COMPAT=( python3_{6,7,8} )
+PYTHON_COMPAT=(python3_{6,7,8,9})
 
 inherit desktop distutils-r1
 
 DESCRIPTION="Application launcher for Linux"
 HOMEPAGE="https://ulauncher.io"
 
-if [[ ${PV} == 9999 ]];then
-	inherit git-r3
-	SRC_URI=""
-	KEYWORDS=""
-	EGIT_REPO_URI="https://github.com/Ulauncher/${PN^}.git"
+if [[ ${PV} == 9999 ]]; then
+    inherit git-r3
+    SRC_URI=""
+    KEYWORDS=""
+    EGIT_REPO_URI="https://github.com/Ulauncher/${PN^}.git"
 else
-	SRC_URI="https://github.com/Ulauncher/${PN^}/releases/download/${PV}/${PN}_${PV}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
-	S="${WORKDIR}/${PN}"
+    SRC_URI="https://github.com/Ulauncher/${PN^}/releases/download/${PV}/${PN}_${PV}.tar.gz"
+    KEYWORDS="~amd64 ~x86"
+    S="${WORKDIR}/${PN}"
 fi
 
 LICENSE="GPL-3"
@@ -44,7 +44,7 @@ RDEPEND="${DEPEND}
 
 BDEPEND="${PYTHON_DEPS}"
 
-src_install(){
-	distutils-r1_src_install
-	domenu build/share/applications/${PN}.desktop
+src_install() {
+    distutils-r1_src_install
+    domenu build/share/applications/${PN}.desktop
 }
