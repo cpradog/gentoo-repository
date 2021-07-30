@@ -2,9 +2,9 @@
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
-PYTHON_COMPAT=( python3_{7,8} )
+PYTHON_COMPAT=( python3_{8,9,10} )
 
-inherit systemd autotools eutils gnome2-utils python-r1
+inherit systemd autotools eutils xdg-utils python-r1
 
 DESCRIPTION="A screen color temperature adjusting software"
 HOMEPAGE="https://gitlab.com/chinstrap/gammastep/"
@@ -42,7 +42,6 @@ REQUIRED_USE="gtk? ( ${PYTHON_REQUIRED_USE} )"
 
 src_prepare() {
 	default
-	eapply "${FILESDIR}/metainfo.patch"
 	eautoreconf
 }
 
@@ -77,14 +76,10 @@ src_install() {
 	fi
 }
 
-pkg_preinst() {
-	use gtk && gnome2_icon_savelist
-}
-
 pkg_postinst() {
-	use gtk && gnome2_icon_cache_update
+	use gtk && xdg_icon_cache_update
 }
 
 pkg_postrm() {
-	use gtk && gnome2_icon_cache_update
+	use gtk && xdg_icon_cache_update
 }
