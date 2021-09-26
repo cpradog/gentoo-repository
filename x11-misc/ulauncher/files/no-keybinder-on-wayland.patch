@@ -1,0 +1,26 @@
+diff --git a/ulauncher/ui/windows/UlauncherWindow.py b/ulauncher/ui/windows/UlauncherWindow.py
+index 28eea48..fe552a1 100644
+--- a/ulauncher/ui/windows/UlauncherWindow.py
++++ b/ulauncher/ui/windows/UlauncherWindow.py
+@@ -8,10 +8,9 @@ import gi
+ gi.require_version('Gtk', '3.0')
+ gi.require_version('Gdk', '3.0')
+ gi.require_version('GLib', '2.0')
+-gi.require_version('Keybinder', '3.0')
+ 
+ # pylint: disable=wrong-import-position, unused-argument
+-from gi.repository import Gtk, Gdk, GLib, Keybinder
++from gi.repository import Gtk, Gdk, GLib
+ 
+ # pylint: disable=unused-import
+ # these imports are needed for Gtk to find widget classes
+@@ -42,6 +41,9 @@ from ulauncher.ui.windows.PreferencesUlauncherDialog import PreferencesUlauncher
+ 
+ logger = logging.getLogger(__name__)
+ 
++if not is_wayland_compatibility_on():
++    gi.require_version('Keybinder', '3.0')
++    from gi.repository import Keybinder
+ 
+ # pylint: disable=too-many-instance-attributes, too-many-public-methods, attribute-defined-outside-init
+ class UlauncherWindow(Gtk.Window, WindowHelper):

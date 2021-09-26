@@ -1,0 +1,25 @@
+diff --git a/ulauncher/utils/display.py b/ulauncher/utils/display.py
+index 49bdcc9..ddf7309 100644
+--- a/ulauncher/utils/display.py
++++ b/ulauncher/utils/display.py
+@@ -1,9 +1,9 @@
++from ulauncher.utils.wayland import is_wayland_compatibility_on
+ import logging
+ import gi
+ gi.require_version('Gdk', '3.0')
+-gi.require_version('GdkX11', '3.0')
+ # pylint: disable=wrong-import-position
+-from gi.repository import Gdk, GdkX11
++from gi.repository import Gdk
+ 
+ logger = logging.getLogger(__name__)
+ 
+@@ -17,7 +17,7 @@ def get_current_screen(window=None):
+         if window:
+             screen = default_screen.get_monitor_at_window(window.get_window())
+         else:
+-            disp = GdkX11.X11Display.get_default()
++            disp = default_screen.get_display()
+             dm = Gdk.Display.get_device_manager(disp)
+             pntr_device = dm.get_client_pointer()
+             (_, x, y) = pntr_device.get_position()
