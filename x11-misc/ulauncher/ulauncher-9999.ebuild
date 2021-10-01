@@ -46,7 +46,6 @@ RDEPEND="${DEPEND}
 
 BDEPEND="
   ${PYTHON_DEPS}
-  net-libs/nodejs
 "
 
 PATCHES=(
@@ -56,6 +55,7 @@ PATCHES=(
 
 build_preferences() {
   cd ${WORKDIR}/${P}/data/preferences
+  source /home/cpradog/.local/share/nvm/nvm.sh
   yarn install
   yarn run build
 }
