@@ -120,7 +120,7 @@ inherit cargo
 
 DESCRIPTION="sirula"
 HOMEPAGE="Simple app launcher for wayland written in rust"
-LICENSE="GPL-3.0"
+LICENSE="GPL-3"
 KEYWORDS="~amd64"
 IUSE=""
 SLOT="0"
