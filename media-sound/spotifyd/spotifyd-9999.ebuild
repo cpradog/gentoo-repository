@@ -25,8 +25,11 @@ backtrace-0.3.55
 base64-0.10.1
 base64-0.11.0
 base64-0.13.0
+bindgen-0.51.1
 bitflags-1.2.1
 block-buffer-0.9.0
+block-modes-0.7.0
+block-padding-0.2.1
 boxfnonce-0.1.1
 bumpalo-3.2.0
 byteorder-1.4.3
@@ -35,25 +38,44 @@ bytes-0.5.6
 bytes-1.0.1
 c2-chacha-0.2.3
 cc-1.0.50
+cesu8-1.1.0
+cexpr-0.3.6
 cfg-if-0.1.10
 cfg-if-1.0.0
 chrono-0.4.11
 cipher-0.2.5
+clang-sys-0.28.1
 clap-2.33.0
 cloudabi-0.0.3
 color-eyre-0.5.10
 color-spantrace-0.1.6
+combine-4.6.0
+core-foundation-0.7.0
 core-foundation-0.9.1
+core-foundation-sys-0.6.2
+core-foundation-sys-0.7.0
 core-foundation-sys-0.8.2
+coreaudio-rs-0.10.0
+coreaudio-sys-0.2.3
+cpal-0.13.3
 cpuid-bool-0.1.2
 crossbeam-utils-0.6.6
+crypto-mac-0.10.0
 crypto-mac-0.11.0
 ctr-0.6.0
 daemonize-0.4.1
 darling-0.9.0
+darling-0.10.2
 darling_core-0.9.0
+darling_core-0.10.2
 darling_macro-0.9.0
+darling_macro-0.10.2
+dbus-0.2.3
+dbus-0.9.3
+dbus-crossroads-0.4.0
+dbus-tokio-0.7.3
 derefable-0.1.0
+derivative-2.2.0
 derive_builder-0.7.2
 derive_builder_core-0.5.0
 digest-0.9.0
@@ -98,6 +120,8 @@ hashbrown-0.11.2
 heck-0.3.1
 hermit-abi-0.1.6
 hex-0.4.2
+hkdf-0.10.0
+hmac-0.10.1
 hmac-0.11.0
 hostname-0.3.1
 http-0.2.0
@@ -117,16 +141,27 @@ if-addrs-0.6.7
 if-addrs-sys-0.3.2
 indenter-0.3.2
 indexmap-1.7.0
+instant-0.1.9
 iovec-0.1.4
 ipnet-2.3.1
 itertools-0.8.2
 itoa-0.4.4
+jni-0.18.0
+jni-sys-0.3.0
+jobserver-0.1.22
 js-sys-0.3.51
 kernel32-sys-0.2.2
+keyring-0.10.1
 lazy_static-1.4.0
 lewton-0.10.2
 libc-0.2.98
+libdbus-sys-0.2.1
+libloading-0.5.2
 libmdns-0.6.2
+libpulse-binding-2.23.1
+libpulse-simple-binding-2.23.0
+libpulse-simple-sys-1.16.1
+libpulse-sys-1.18.0
 librespot-audio-0.2.0
 librespot-connect-0.2.0
 librespot-core-0.2.0
@@ -135,7 +170,9 @@ librespot-playback-0.2.0
 librespot-protocol-0.2.0
 librespot-tremor-0.2.0
 lock_api-0.3.3
+lock_api-0.4.4
 log-0.4.8
+mach-0.3.2
 match_cfg-0.1.0
 matches-0.1.8
 maybe-uninit-2.0.0
@@ -149,14 +186,29 @@ miow-0.2.2
 miow-0.3.7
 multimap-0.8.3
 native-tls-0.2.7
+ndk-0.3.0
+ndk-glue-0.3.0
+ndk-macro-0.2.0
+ndk-sys-0.2.1
 net2-0.2.37
 nix-0.20.0
+nom-4.2.3
 ntapi-0.3.6
+num-0.3.1
+num-bigint-0.3.1
 num-bigint-0.4.0
+num-complex-0.3.1
+num-derive-0.3.3
 num-integer-0.1.44
+num-iter-0.1.42
+num-rational-0.3.2
 num-traits-0.2.14
 num_cpus-1.11.1
+num_enum-0.5.1
+num_enum_derive-0.5.1
 object-0.22.0
+oboe-0.4.2
+oboe-sys-0.4.2
 ogg-0.8.0
 ogg-sys-0.0.9
 once_cell-1.5.2
@@ -166,8 +218,11 @@ openssl-probe-0.1.2
 openssl-sys-0.9.65
 owo-colors-1.2.1
 parking_lot-0.9.0
+parking_lot-0.11.1
 parking_lot_core-0.6.2
+parking_lot_core-0.8.3
 pbkdf2-0.8.0
+peeking_take_while-0.1.2
 percent-encoding-1.0.1
 percent-encoding-2.1.0
 pin-project-0.4.8
@@ -178,8 +233,11 @@ pin-project-lite-0.1.4
 pin-project-lite-0.2.4
 pin-utils-0.1.0
 pkg-config-0.3.17
+portaudio-rs-0.3.2
+portaudio-sys-0.1.1
 ppv-lite86-0.2.10
 priority-queue-1.1.1
+proc-macro-crate-0.1.5
 proc-macro-error-1.0.2
 proc-macro-error-attr-1.0.2
 proc-macro-hack-0.5.19
@@ -213,19 +271,26 @@ rand_xorshift-0.1.1
 random-0.12.2
 rdrand-0.4.0
 redox_syscall-0.1.56
+redox_syscall-0.2.9
 regex-1.3.3
 regex-syntax-0.6.13
 remove_dir_all-0.5.2
 reqwest-0.10.1
 reqwest-0.11.4
+rodio-0.13.1
 rspotify-0.8.0
 rustc-demangle-0.1.16
+rustc-hash-1.0.1
 rustc-serialize-0.3.24
 rustc_version-0.2.3
 ryu-1.0.2
+same-file-1.0.6
 schannel-0.1.16
 scopeguard-1.1.0
+secret-service-1.1.3
+security-framework-0.4.4
 security-framework-2.3.1
+security-framework-sys-0.4.3
 security-framework-sys-2.3.0
 semver-0.9.0
 semver-parser-0.7.0
@@ -235,16 +300,20 @@ serde_json-1.0.44
 serde_urlencoded-0.6.1
 serde_urlencoded-0.7.0
 sha-1-0.9.1
+sha2-0.9.2
 shannon-0.2.0
 sharded-slab-0.1.1
 shell-words-1.0.0
+shlex-0.1.1
 signal-hook-registry-1.4.0
 slab-0.4.2
 smallvec-0.6.13
 smallvec-1.6.1
 socket2-0.4.0
+stdweb-0.1.3
 strsim-0.7.0
 strsim-0.8.0
+strsim-0.9.3
 structopt-0.3.17
 structopt-derive-0.4.10
 subtle-2.4.0
@@ -301,10 +370,12 @@ uuid-0.8.2
 vcpkg-0.2.8
 vec_map-0.8.1
 vergen-3.0.4
+version_check-0.1.5
 version_check-0.9.1
+walkdir-2.3.2
 want-0.3.0
-wasi-0.10.2+wasi-snapshot-preview1
 wasi-0.9.0+wasi-snapshot-preview1
+wasi-0.10.2+wasi-snapshot-preview1
 wasm-bindgen-0.2.74
 wasm-bindgen-backend-0.2.74
 wasm-bindgen-futures-0.4.24
@@ -354,27 +425,27 @@ DOCS=({CHANGELOG,README}.md)
 QA_FLAGS_IGNORED="usr/bin/spotifyd"
 
 src_unpack() {
-  git-r3_src_unpack
-  cargo_src_unpack
+	git-r3_src_unpack
+	cargo_src_unpack
 }
 
 src_configure() {
-  myfeatures=(
-    "$(usex alsa alsa_backend '')"
-    "$(usex dbus "dbus_keyring dbus_mpris" '')"
-    "$(usex portaudio portaudio_backend '')"
-    "$(usex pulseaudio pulseaudio_backend '')"
-    "$(usex rodio rodio_backend '')"
-  )
+	myfeatures=(
+		"$(usex alsa alsa_backend '')"
+		"$(usex dbus "dbus_keyring dbus_mpris" '')"
+		"$(usex portaudio portaudio_backend '')"
+		"$(usex pulseaudio pulseaudio_backend '')"
+		"$(usex rodio rodio_backend '')"
+	)
 }
 
 src_install() {
-  einstalldocs
-  systemd_douserunit contrib/spotifyd.service
-  newinitd "${FILESDIR}"/spotifyd.initd spotifyd
-  newconfd "${FILESDIR}"/spotifyd.confd spotifyd
-  insinto /etc
-  doins "${FILESDIR}"/spotifyd.conf
+	einstalldocs
+	systemd_douserunit contrib/spotifyd.service
+	newinitd "${FILESDIR}"/spotifyd.initd spotifyd
+	newconfd "${FILESDIR}"/spotifyd.confd spotifyd
+	insinto /etc
+	doins "${FILESDIR}"/spotifyd.conf
 
-  cargo_src_install ${myfeatures:+--features "${myfeatures[*]}"} --no-default-features
+	cargo_src_install ${myfeatures:+--features "${myfeatures[*]}"} --no-default-features
 }
