@@ -5,7 +5,7 @@ EAPI=8
 
 inherit git-r3
 
-DESCRIPTION=" An extensible multilanguage static code analyzer. "
+DESCRIPTION="An extensible multilanguage static code analyzer."
 HOMEPAGE="https://pmd.github.io/"
 EGIT_REPO_URI="https://github.com/pmd/pmd.git"
 LICENSE="BSD Apache-2.0"
