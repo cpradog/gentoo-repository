@@ -1,4 +1,4 @@
-# Copyright 1999-2019 Gentoo Authors
+# Copyright 1999-2023 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=7
@@ -18,7 +18,7 @@ fi
 
 LICENSE="MIT"
 SLOT="0"
-IUSE="gtk-layer-shell mpd network pulseaudio tray +udev"
+IUSE="experimental gtk-layer-shell jack libcxx libinput logind man-pages mpd mpris network pulseaudio rfkill sndio systemd tray udev upower wireplumber"
 
 BDEPEND="
 	>=app-text/scdoc-1.9.2
@@ -53,11 +53,24 @@ fi
 
 src_configure() {
 	local emesonargs=(
+		$(meson_boolean experimental)
+		$(meson_feature gtk-layer-shell)
+		$(meson_feature jack)
+		$(meson_boolean libcxx)
+		$(meson_feature libinput)
+		$(meson_feature logind)
+		$(meson_feature man-pages)
 		$(meson_feature mpd)
+		$(meson_feature mpris)
 		$(meson_feature network libnl)
 		$(meson_feature pulseaudio)
+		$(meson_feature rfkill)
+		$(meson_feature sndio)
+		$(meson_feature systemd)
 		$(meson_feature tray dbusmenu-gtk)
+		$(meson_feature upower upower_glib)
 		$(meson_feature udev libudev)
+		$(meson_feature wireplumber)
 	)
 	meson_src_configure
 }
