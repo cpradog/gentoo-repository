@@ -7,7 +7,7 @@ inherit desktop java-utils-2 rpm xdg
 
 DESCRIPTION="Spanish government's electronic signature application for online procedures"
 HOMEPAGE="https://administracionelectronica.gob.es/ctt/clienteafirma"
-SRC_URI="https://estaticos.redsara.es/comunes/autofirma/${PV//\.//}/AutoFirma_Linux.zip -> ${P}.zip"
+SRC_URI="https://estaticos.redsara.es/comunes/autofirma/${PV//\.//}/AutoFirma_Linux_Fedora.zip -> ${P}.zip"
 
 LICENSE="|| ( GPL-2+ EUPL-1.1 )"
 SLOT="0"
