@@ -1,0 +1,11 @@
+diff --git a/bwd.service b/bwd.service
+index e56712f..71f0cdf 100644
+--- a/bwd.service
++++ b/bwd.service
+@@ -5,5 +5,6 @@ Requisite=network-online.target
+ [Service]
+ Type=oneshot
+ ExecStart=/usr/bin/bwd
++User=bwd
+ 
+ [Install]
