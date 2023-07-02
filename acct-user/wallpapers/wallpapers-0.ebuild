@@ -2,7 +2,7 @@ EAPI=8
 
 inherit acct-user
 
-DESCRIPTION="user for bwd service"
+DESCRIPTION="user for download wallpapers"
 ACCT_USER_ID=-1
 ACCT_USER_GROUPS=( nobody )
 

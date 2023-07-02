@@ -2,8 +2,8 @@ EAPI=8
 
 inherit systemd git-r3
 
-DESCRIPTION="Bind wallpaper downloader"
-HOMEPAGE="https://github.com/cpradog/bwd"
+DESCRIPTION="Wallhaven wallpaper downloader"
+HOMEPAGE="https://github.com/cpradog/wwd"
 LICENSE="MIT"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -17,13 +17,13 @@ PATCHES=(
 )
 
 src_install() {
-	dobin bwd
+	dobin wwd
 	insinto /etc
-	doins bwd.conf
+	doins wwd.conf
 
 	if use systemd; then
-		systemd_dounit bwd.service
-		systemd_dounit bwd.timer
+		systemd_dounit wwd.service
+		systemd_dounit wwd.timer
 	fi
 
 	keepdir /var/lib/wallpapers
