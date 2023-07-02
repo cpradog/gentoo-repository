@@ -6,6 +6,6 @@ index e56712f..71f0cdf 100644
  [Service]
  Type=oneshot
  ExecStart=/usr/bin/wwd
-+User=wwd
++User=wallpapers
  
  [Install]
