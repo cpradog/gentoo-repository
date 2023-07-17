@@ -115,26 +115,27 @@ IUSE=""
 SLOT="0"
 
 if [[ ${PV} == 9999 ]]; then
-  inherit git-r3
-  EGIT_REPO_URI="https://github.com/DorianRudolph/${PN^}.git"
+	inherit git-r3
+	EGIT_REPO_URI="https://github.com/DorianRudolph/${PN^}.git"
 else
-  SRC_URI="$(cargo_crate_uris ${CRATES})"
-  SRC_URI="https://github.com/DorianRudolph/${PN^}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	SRC_URI="$(cargo_crate_uris ${CRATES})"
+	SRC_URI="https://github.com/DorianRudolph/${PN^}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 fi
 
 DEPEND="
 dev-libs/atk
 x11-libs/gdk-pixbuf
 gui-libs/gtk
+gui-libs/gtk-layer-shell
 "
 RDEPEND=""
 
 src_unpack() {
-  if [[ ${PV} == *9999* ]]; then
+	if [[ ${PV} == *9999* ]]; then
 	git-r3_src_unpack
 	cargo_live_src_unpack
-  else
+	else
 	default
 	cargo_src_unpack
-  fi
+	fi
 }
