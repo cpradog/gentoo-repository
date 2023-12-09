@@ -13,7 +13,7 @@ LICENSE="|| ( GPL-2+ EUPL-1.1 )"
 SLOT="0"
 KEYWORDS="~amd64"
 
-RDEPEND="virtual/jre:21"
+RDEPEND=">=virtual/jre-1.8"
 BDEPEND="app-arch/unzip"
 
 S=${WORKDIR}
