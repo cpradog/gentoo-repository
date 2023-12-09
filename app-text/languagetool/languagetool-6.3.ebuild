@@ -28,7 +28,7 @@ CP_DEPEND="
 "
 
 RDEPEND="
-	>=virtual/jre-1.8
+	>=virtual/jre-21
 	${CP_DEPEND}"
 
 BDEPEND="app-arch/unzip"
