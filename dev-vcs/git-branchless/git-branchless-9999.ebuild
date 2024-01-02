@@ -30,5 +30,4 @@ src_install() {
   cargo_src_install --path "./git-branchless-smartlog"
   cargo_src_install --path "./git-branchless-submit"
   cargo_src_install --path "./git-branchless-test"
-  cargo_src_install --path "./scm-record" --features=scm-diff-editor
 }
