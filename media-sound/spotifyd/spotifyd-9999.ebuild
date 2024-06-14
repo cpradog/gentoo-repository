@@ -3,7 +3,7 @@
 
 # shellcheck disable=SC2086
 
-EAPI=7
+EAPI=8
 
 EGIT_REPO_URI="https://github.com/Spotifyd/${PN}.git"
 CRATES="
