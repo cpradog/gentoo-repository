@@ -5,10 +5,11 @@ EAPI=8
 
 inherit zig-package
 
+SRC_HASH="879c74a3a801d49fa34343aebd55a22f591899b3"
 DESCRIPTION="Simple tokenizer for the .ini format"
 HOMEPAGE="https://git.sr.ht/~leon_plickat/zig-ini"
-SRC_URI="https://git.sr.ht/~leon_plickat/zig-ini/archive/879c74a3a801d49fa34343aebd55a22f591899b3.tar.gz -> ${P}.tar.gz"
-S="${WORKDIR}/${PN}"
+SRC_URI="https://git.sr.ht/~leon_plickat/zig-ini/archive/${SRC_HASH}.tar.gz -> ${P}.tar.gz"
+S="${WORKDIR}/${PN}-${SRC_HASH}"
 
 LICENSE="MIT"
 KEYWORDS="~amd64"
