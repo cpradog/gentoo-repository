@@ -12,8 +12,10 @@ LICENSE="GPL-3"
 SLOT="0"
 
 DEPEND="
-	dev-libs/wayland
-	x11-libs/libxkbcommon
-	x11-libs/pixman
-	media-libs/fcft
+	dev-zig/zig-fcft
+	dev-zig/zig-ini
+	dev-zig/zig-pixman
+	dev-zig/zig-spoon
+	dev-zig/zig-wayland
+	dev-zig/zig-xkbcommon
 "
