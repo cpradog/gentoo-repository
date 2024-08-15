@@ -22,18 +22,32 @@ esac
 if [[ ! ${_ZIG_PACKAGE_ECLASS} ]]; then
 _ZIG_PACKAGE_ECLASS=1
 
+# @ECLASS_VARIABLE: ZIG_MIN
+# @INTERNAL
+# @DESCRIPTION:
+# ZIG_MIN variable to be passed to zig.eclass
 ZIG_MIN="0.12"
+
 inherit zig
 
 SLOT="${PV}"
 
-zig-package_src_install() {
-	local zig_pkg_hash="$("${ZIG}" fetch "${S}")" || die
-	insinto /usr/src/zig/packages
-	doins -r "${T}/zig-cache/p/${zig_pkg_hash}"
+zig-package_src_prepare() {
+	# Calculate package hash BEFORE applying any patches
+	zig_pkg_hash="$("${ZIG}" fetch "${S}")" || die
+	default
 }
 
-EXPORT_FUNCTIONS src_install
+zig-package_src_install() {
+	local new_zig_pkg_hash="$("${ZIG}" fetch "${S}")" || die
+	insinto /usr/src/zig
+	doins -r "${T}/zig-cache/p/${new_zig_pkg_hash}"
+	if [[ "${new_zig_pkg_hash}" != "${zig_pkg_hash}" ]]; then
+		mv "${ED}/usr/src/zig/${new_zig_pkg_hash}" "${ED}/usr/src/zig/${zig_pkg_hash}" || die
+	fi
+}
+
+EXPORT_FUNCTIONS src_prepare src_install
 
 fi
 
