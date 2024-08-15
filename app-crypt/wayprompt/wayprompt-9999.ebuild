@@ -11,6 +11,10 @@ EGIT_REPO_URI="https://git.sr.ht/~leon_plickat/wayprompt"
 LICENSE="GPL-3"
 SLOT="0"
 
+PATCHES=(
+	"${FILESDIR}/fix-zig-spoon-hash.patch"
+)
+
 DEPEND="
 	dev-zig/zig-fcft
 	dev-zig/zig-ini
