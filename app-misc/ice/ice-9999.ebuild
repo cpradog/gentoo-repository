@@ -9,6 +9,10 @@ HOMEPAGE="https://github.com/peppermintos/ice"
 SLOT="0"
 KEYWORDS="~amd64"
 
+DEPEND="
+dev-python/beautifulsoup4
+"
+
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/peppermintos/${PN^}.git"
