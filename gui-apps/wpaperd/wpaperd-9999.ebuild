@@ -27,7 +27,6 @@ DEPEND="
 "
 BDEPEND="
 	virtual/pkgconfig
-	virtual/rust
 	man? ( app-text/scdoc )
 "
 
