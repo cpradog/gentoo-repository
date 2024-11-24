@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/bensadeh/circumflex"
 EGIT_REPO_URI="https://github.com/bensadeh/circumflex.git"
 
 RESTRICT="network-sandbox strip"
-LICENSE="AGPL-3.0"
+LICENSE="AGPL-3"
 SLOT="0"
 IUSE=""
 KEYWORDS="~amd64"
