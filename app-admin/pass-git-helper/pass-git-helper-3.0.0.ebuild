@@ -10,7 +10,7 @@ inherit distutils-r1 pypi
 
 DESCRIPTION="A git credential helper interfacing with pass, the standard unix password manager."
 HOMEPAGE="https://github.com/languitar/pass-git-helper"
-SRC_URI="https://github.com/languitar/pass-git-helper/archive/refs/tags/v1.4.0.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/languitar/pass-git-helper/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
 S="${WORKDIR}/${P}"
 
 LICENSE="LGPL-3"
