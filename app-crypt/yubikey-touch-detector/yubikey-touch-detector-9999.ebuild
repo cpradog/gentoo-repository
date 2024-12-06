@@ -11,7 +11,7 @@ HOMEPAGE="https://github.com/maximbaz/yubikey-touch-detector"
 EGIT_REPO_URI="https://github.com/maximbaz/yubikey-touch-detector.git"
 
 RESTRICT="network-sandbox strip"
-LICENSE="AGPL-3"
+LICENSE="ISC"
 SLOT="0"
 IUSE=""
 KEYWORDS="~amd64"
