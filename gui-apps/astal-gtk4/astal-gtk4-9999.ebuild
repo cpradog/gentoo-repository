@@ -17,7 +17,7 @@ DEPEND="
 	dev-lang/vala[valadoc]
 	gui-libs/gtk4-layer-shell[vala]
 	dev-libs/gobject-introspection
-	x11-libs/gtk+:4
+	gui-libs/gtk
 "
 RDEPEND="${DEPEND}"
 BDEPEND="

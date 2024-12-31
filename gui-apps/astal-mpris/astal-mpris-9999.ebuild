@@ -17,7 +17,6 @@ DEPEND="
 	dev-lang/vala[valadoc]
 	dev-libs/gobject-introspection
 	dev-libs/json-glib[introspection]
-	gnome-base/gvfs
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
