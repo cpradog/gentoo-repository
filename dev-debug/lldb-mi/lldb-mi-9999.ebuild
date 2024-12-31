@@ -21,7 +21,7 @@ SLOT="0"
 IUSE=""
 
 BDEPEND=""
-DEPEND="dev-debug/lldb"
+DEPEND="llvm-core/lldb"
 RDEPEND="${DEPEND}"
 
 src_configure() {
