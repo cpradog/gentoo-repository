@@ -11,7 +11,7 @@ HOMEPAGE="https://aylur.github.io/astal/"
 LICENSE="LGPL-2.1"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+gtk3 +gtk4 +apps +auth +battery +bluetooth cava greetd hyprland +mpris +network +notifd +powerprofiles river +tray +wireplumber"
+IUSE="+gtk3 +gtk4 +apps +auth +battery +bluetooth cava greetd hyprland +mpris +network +notifd +powerprofiles river +tray +wireplumber +gjs lua"
 
 DEPEND="
 	dev-lang/vala[valadoc]
@@ -39,6 +39,8 @@ PDEPEND="
 	river? ( gui-apps/astal-river )
 	tray? ( gui-apps/astal-tray )
 	wireplumber? ( gui-apps/astal-wireplumber )
+	gjs? ( gui-apps/astal-gjs )
+	lua? ( gui-apps/astal-lua )
 "
 
 EGIT_REPO_URI="https://github.com/aylur/astal"
