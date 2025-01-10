@@ -26,9 +26,10 @@ src_unpack() {
 }
 
 src_compile() {
-	emake build
+	ego build
 }
 
 src_install() {
-	emake install PREFIX="${D}/usr"
+	dobin yubikey-touch-detector
+	default
 }
