@@ -40,7 +40,7 @@ src_unpack() {
 src_configure() {
   myfeatures=(
     "$(usex alsa alsa_backend '')"
-    "$(usex dbus "dbus_keyring dbus_mpris" '')"
+    "$(usex dbus "dbus_mpris" '')"
     "$(usex portaudio portaudio_backend '')"
     "$(usex pulseaudio pulseaudio_backend '')"
     "$(usex rodio rodio_backend '')"
