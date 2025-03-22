@@ -24,8 +24,7 @@ REQUIRED_USE="|| ( alsa portaudio pulseaudio rodio ) rodio? ( alsa )"
 RDEPEND="dev-libs/openssl:0=
 	alsa? ( media-libs/alsa-lib )
 	dbus? ( sys-apps/dbus )
-	portaudio? ( media-libs/portaudio )
-	pulseaudio? ( media-sound/pulseaudio )"
+	portaudio? ( media-libs/portaudio )"
 DEPEND="${RDEPEND}"
 BDEPEND="virtual/pkgconfig"
 
