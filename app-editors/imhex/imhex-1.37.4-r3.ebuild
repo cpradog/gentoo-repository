@@ -1,9 +1,9 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-LLVM_COMPAT=( {15..19} )
+LLVM_COMPAT=( {15..20} )
 
 inherit cmake llvm-r1 toolchain-funcs flag-o-matic xdg-utils
 
@@ -19,7 +19,7 @@ S_PATTERNS="${WORKDIR}/ImHex-Patterns-ImHex-v${PV}"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64"
-IUSE="+system-llvm test lto +desktop-portal"
+IUSE="+system-llvm test lto +desktop-portal lz4"
 RESTRICT="!test? ( test )"
 
 PATCHES=(
@@ -27,25 +27,35 @@ PATCHES=(
 	# will use it at some point and try to access internet.
 	# Because it did not cause any issue, we can disable it
 	"${FILESDIR}/remove_dotnet.patch"
-	# Remove the different -Werror flags
-	"${FILESDIR}/remove_Werror.patch"
+	# Correct the cmake MbedTLS search call
+	"${FILESDIR}/cmake_mbedtls.patch"
+	# Set boost components to regex
+	"${FILESDIR}/cmake_boost_regex.patch"
+	# Temporary (until the next update) patch
+	"${FILESDIR}/${P}-update-libfmt.patch"
 )
+
+DOCS+=( LICENSE PLUGINS.md )
+
+# libfmt can not be >= 11.2.0
+# See https://github.com/WerWolv/ImHex/issues/2225
 
 DEPEND="
 	app-arch/bzip2
 	app-arch/xz-utils
 	app-arch/zstd:=
-	app-forensics/yara:=
+	>=app-forensics/yara-4.2.0:=
 	>=dev-cpp/nlohmann_json-3.10.2
-	dev-libs/capstone:=
+	dev-libs/boost
+	>=dev-libs/capstone-5.0.3:=
 	>=dev-libs/nativefiledialog-extended-1.2.1[desktop-portal?]
-	>=dev-libs/libfmt-8.0.0:=
+	>=dev-libs/libfmt-11.0.2:=
 	media-libs/fontconfig
 	media-libs/freetype
 	>=media-libs/glfw-3.4[X]
 	media-libs/glm
 	media-libs/libglvnd
-	net-libs/mbedtls:0
+	net-libs/mbedtls:=
 	net-misc/curl
 	sys-apps/file
 	sys-libs/zlib
@@ -54,9 +64,10 @@ DEPEND="
 "
 RDEPEND="${DEPEND}"
 BDEPEND="
-	system-llvm? ( llvm-core/llvm )
 	app-admin/chrpath
 	gnome-base/librsvg
+	lz4? ( app-arch/lz4 )
+	system-llvm? ( llvm-core/llvm )
 "
 
 pkg_pretend() {
@@ -102,6 +113,7 @@ src_configure() {
 		-D IMHEX_COMPRESS_DEBUG_INFO=OFF \
 		-D IMHEX_VERSION="${PV}" \
 		-D PROJECT_VERSION="${PV}" \
+		-D USE_SYSTEM_BOOST=ON \
 		-D USE_SYSTEM_CAPSTONE=ON \
 		-D USE_SYSTEM_FMT=ON \
 		-D USE_SYSTEM_LLVM=$(usex system-llvm) \
