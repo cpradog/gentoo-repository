@@ -1,4 +1,4 @@
-# Copyright 2023 Gentoo Authors
+# Copyright 2023-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: zig.eclass
@@ -65,7 +65,7 @@ fi
 # @FUNCTION: zig-set_ZIG
 # @DESCRIPTION:
 # Sets the ZIG environment variable.
-zig-set_ZIG() {
+zig-legacy-set_ZIG() {
 	# Exit if ZIG is already set by the user or the ebuild.
 	[[ -n ${ZIG} ]] && return
 
@@ -112,8 +112,8 @@ zig-set_ZIG() {
 # @FUNCTION: zig_pkg_setup
 # @DESCRIPTION:
 # Determines suitable Zig installation and exports ZIG.
-zig_pkg_setup() {
-	zig-set_ZIG
+zig-legacy_pkg_setup() {
+	zig-legacy-set_ZIG
 	mkdir -p "${T}/zig-cache" || die
 	export ZIG_GLOBAL_CACHE_DIR="${T}/zig-cache"
 }

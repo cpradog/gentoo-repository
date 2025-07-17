@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2024-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: zig-package.eclass
@@ -28,7 +28,7 @@ _ZIG_PACKAGE_ECLASS=1
 # ZIG_MIN variable to be passed to zig.eclass
 ZIG_MIN="0.12"
 
-inherit zig
+inherit zig-legacy
 
 SLOT="${PV}"
 

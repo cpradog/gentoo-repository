@@ -1,4 +1,4 @@
-# Copyright 2024 Gentoo Authors
+# Copyright 2024-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 # @ECLASS: zig-build.eclass
@@ -21,7 +21,7 @@ esac
 if [[ ! ${_ZIG_BUILD_ECLASS} ]]; then
 _ZIG_BUILD_ECLASS=1
 
-inherit edo zig
+inherit edo zig-legacy
 
 # @ECLASS_VARIABLE: ezigbuildargs
 # @DEFAULT_UNSET
