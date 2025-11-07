@@ -1,4 +1,4 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
@@ -18,7 +18,7 @@ DEPEND="
 	dev-libs/gobject-introspection
 	dev-libs/json-glib[introspection]
 	x11-libs/gtk+:3
-	dev-libs/libdbusmenu[introspection,gtk]
+	dev-libs/libdbusmenu[introspection,gtk3]
 	x11-misc/appmenu-gtk-module
 	x11-misc/appmenu-glib-translator
 "
