@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit meson
+inherit meson vala
 
 DESCRIPTION="Library for managing the systemtray by implementing the StatusNotifierItem protocol."
 HOMEPAGE="https://aylur.github.io/astal/"
@@ -30,12 +30,18 @@ BDEPEND="
 
 EGIT_REPO_URI="https://github.com/aylur/astal"
 case "${PV}" in
-	"9999")
-		inherit git-r3
-		;;
-	*)
-		SRC_URI="${EGIT_REPO_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-		;;
+"9999")
+	inherit git-r3
+	;;
+*)
+	SRC_URI="${EGIT_REPO_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz"
+	;;
 esac
 
 EMESON_SOURCE="${S}/lib/tray"
+
+src_prepare() {
+	default
+	vala_setup
+	export VALADOC="valadoc-$(vala_best_api_version)"
+}
