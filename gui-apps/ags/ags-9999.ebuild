@@ -1,9 +1,9 @@
-# Copyright 2021 Gentoo Authors
+# Copyright 2021-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit go-module
+inherit meson go-module
 
 DESCRIPTION=" Scaffolding CLI for Astal+TypeScript "
 HOMEPAGE="https://aylur.github.io/ags/"
@@ -16,6 +16,7 @@ IUSE=""
 DEPEND="
 	gui-libs/gtk4-layer-shell
 	gui-apps/astal-gjs
+	net-libs/nodejs
 	dev-lang/go
 "
 RDEPEND="${DEPEND}"
@@ -25,26 +26,19 @@ PDEPEND=""
 
 EGIT_REPO_URI="https://github.com/aylur/ags"
 case "${PV}" in
-	"9999")
-		inherit git-r3
-		;;
-	*)
-		SRC_URI="${EGIT_REPO_URI}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-		;;
+"9999")
+	inherit git-r3
+	;;
+*)
+	SRC_URI="${EGIT_REPO_URI}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+	;;
 esac
 
 src_unpack() {
 	default
 	git-r3_src_unpack
-	go-module_live_vendor
-}
 
-src_compile() {
-	go build -v -ldflags "\
-		-X 'main.gtk4LayerShell=$(pkg-config --variable=libdir gtk4-layer-shell-0)/libgtk4-layer-shell.so' \
-		-X 'main.astalGjs=$(pkg-config --variable=srcdir astal-gjs)'"
-}
-
-src_install() {
-	dobin ags
+	S="${S}/cli" go-module_live_vendor
+	cd "${S}" || die
+	npm install
 }
