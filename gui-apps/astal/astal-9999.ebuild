@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit meson vala
+inherit astal
 
 DESCRIPTION="Building blocks for creating custom desktop shells"
 HOMEPAGE="https://aylur.github.io/astal/"
@@ -13,15 +13,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE="+gtk3 +gtk4 +apps +auth +battery +bluetooth cava greetd hyprland +mpris +network +notifd +powerprofiles river +tray +wireplumber +gjs lua"
 
-DEPEND="
-	dev-lang/vala[valadoc]
-	dev-libs/gobject-introspection
-"
-RDEPEND="${DEPEND}"
-BDEPEND="
-	app-eselect/eselect-vala
-	dev-build/meson
-"
 PDEPEND="
 	gtk3? ( gui-apps/astal-gtk3 )
 	gtk4? ( gui-apps/astal-gtk4 )
@@ -43,20 +34,8 @@ PDEPEND="
 	lua? ( gui-apps/astal-lua )
 "
 
-EGIT_REPO_URI="https://github.com/aylur/astal"
-case "${PV}" in
-"9999")
-	inherit git-r3
-	;;
-*)
-	SRC_URI="${EGIT_REPO_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	;;
-esac
-
 EMESON_SOURCE="${S}/lib/astal/io"
 
 src_prepare() {
-	default
-	vala_setup
-	export VALADOC="valadoc-$(vala_best_api_version)"
+	astal_src_prepare
 }

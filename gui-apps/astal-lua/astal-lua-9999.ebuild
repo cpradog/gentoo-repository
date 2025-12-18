@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit meson vala
+inherit astal
 
 DESCRIPTION="Astral lua language support"
 HOMEPAGE="https://aylur.github.io/astal/"
@@ -14,29 +14,13 @@ KEYWORDS="~amd64"
 
 DEPEND="
 	gui-apps/astal
-	dev-lang/vala[valadoc]
-	dev-libs/gobject-introspection
 "
 RDEPEND="${DEPEND}"
-BDEPEND="
-	app-eselect/eselect-vala
-	dev-build/meson
-"
 
-EGIT_REPO_URI="https://github.com/aylur/astal"
-case "${PV}" in
-"9999")
-	inherit git-r3
-	;;
-*)
-	SRC_URI="${EGIT_REPO_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	;;
-esac
 
 EMESON_SOURCE="${S}/lang/lua"
 
 src_prepare() {
 	default
-	vala_setup
-	export VALADOC="valadoc-$(vala_best_api_version)"
+	astal_src_prepare
 }

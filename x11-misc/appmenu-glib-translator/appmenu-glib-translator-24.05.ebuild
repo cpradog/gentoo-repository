@@ -1,9 +1,9 @@
-# Copyright 1999-2024 Gentoo Authors
+# Copyright 1999-2025 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-inherit meson
+inherit meson vala
 
 DESCRIPTION="Application menu module for GTK translator"
 HOMEPAGE="https://gitlab.com/vala-panel-project/vala-panel-appmenu"
@@ -19,6 +19,14 @@ RDEPEND="
 	dev-libs/glib[dbus]
 "
 DEPEND="${RDEPEND}"
-BDEPEND="virtual/pkgconfig"
+BDEPEND="
+	virtual/pkgconfig
+	$(vala_depend)
+"
 
 EMESON_SOURCE="${S}/subprojects/appmenu-glib-translator"
+
+src_prepare() {
+	default
+	vala_setup
+}

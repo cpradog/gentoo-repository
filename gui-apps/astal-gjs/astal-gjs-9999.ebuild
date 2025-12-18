@@ -3,7 +3,7 @@
 
 EAPI=8
 
-inherit meson vala
+inherit astal
 
 DESCRIPTION="Astral gjs language support"
 HOMEPAGE="https://aylur.github.io/astal/"
@@ -14,30 +14,13 @@ KEYWORDS="~amd64"
 
 DEPEND="
 	gui-apps/astal
-	dev-lang/vala[valadoc]
-	dev-libs/gobject-introspection
+	|| ( gui-apps/astal-gtk3 gui-apps/astal-gtk4 )
 	dev-libs/gjs
 "
 RDEPEND="${DEPEND}"
-BDEPEND="
-	app-eselect/eselect-vala
-	dev-build/meson
-"
-
-EGIT_REPO_URI="https://github.com/aylur/astal"
-case "${PV}" in
-"9999")
-	inherit git-r3
-	;;
-*)
-	SRC_URI="${EGIT_REPO_URI}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	;;
-esac
 
 EMESON_SOURCE="${S}/lang/gjs"
 
 src_prepare() {
-	default
-	vala_setup
-	export VALADOC="valadoc-$(vala_best_api_version)"
+	astal_src_prepare
 }
