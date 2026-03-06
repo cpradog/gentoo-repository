@@ -1,9 +1,9 @@
-# Copyright 2021-2023 Gentoo Authors
+# Copyright 2021-2026 Gentoo Authors
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=8
 
-PYTHON_COMPAT=( python3_{8,9,10,11,12} )
+PYTHON_COMPAT=( python3_{8,9,10,11,12,13,14} )
 
 inherit meson python-r1
 
