@@ -7,8 +7,8 @@ CRATES=""
 
 inherit cargo
 
-DESCRIPTION="wpaperd"
-HOMEPAGE="Wallpaper daemon for Wayland"
+DESCRIPTION="Wallpaper daemon for Wayland"
+HOMEPAGE="https://github.com/danyspin97/wpaperd"
 LICENSE="GPL-3"
 KEYWORDS="~amd64"
 IUSE="+man"
