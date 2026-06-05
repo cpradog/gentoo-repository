@@ -12,16 +12,17 @@ HOMEPAGE="https://github.com/alebastr/sway-systemd"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}"
 
 EGIT_REPO_URI="https://github.com/alebastr/${PN}"
 case "${PV}" in
 	"9999")
 	inherit git-r3
+	PROPERTIES="live"
 	;;
 	*)
 	SRC_URI="${EGIT_REPO_URI}/archive/refs/tags/v${PV}.tar.gz -> ${P}.tar.gz"
+	KEYWORDS="~amd64"
 	;;
 esac
 

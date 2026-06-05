@@ -13,6 +13,8 @@ EGIT_REPO_URI="https://github.com/Schniz/fnm.git"
 
 LICENSE="GPL-3"
 SLOT="0"
+KEYWORDS=""
+PROPERTIES="live"
 
 BDEPEND="|| ( dev-lang/rust dev-lang/rust-bin )"
 

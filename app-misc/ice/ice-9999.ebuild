@@ -7,7 +7,8 @@ EAPI=8
 DESCRIPTION=" Tool to create Chromium/Chrome/Firefox/Vivaldi SSBs in Peppermint OS. "
 HOMEPAGE="https://github.com/peppermintos/ice"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
+PROPERTIES="live"
 
 DEPEND="
 dev-python/beautifulsoup4

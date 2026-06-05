@@ -10,7 +10,8 @@ HOMEPAGE="https://aylur.github.io/astal/"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
+PROPERTIES="live"
 
 DEPEND="
 	gui-apps/astal

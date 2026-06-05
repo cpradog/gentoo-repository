@@ -16,6 +16,7 @@ if [[ ${PV} == "9999" ]]; then
 	inherit git-r3
 	EGIT_REPO_URI="https://github.com/z00m128/sjasmplus.git"
 	SRC_URI=""
+	PROPERTIES="live"
 else
 	KEYWORDS="-* amd64 x86"
 	RESTRICT="mirror"

@@ -17,6 +17,7 @@ SRC_URI="$(cargo_crate_uris ${CRATES})"
 
 LICENSE="Apache-2.0 BSD BSD-2 GPL-3 ISC MIT MPL-2.0 ZLIB"
 KEYWORDS=""
+PROPERTIES="live"
 SLOT="0"
 IUSE="+alsa dbus portaudio pulseaudio rodio"
 REQUIRED_USE="|| ( alsa portaudio pulseaudio rodio ) rodio? ( alsa )"

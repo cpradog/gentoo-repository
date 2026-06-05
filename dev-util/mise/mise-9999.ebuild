@@ -16,6 +16,8 @@ EGIT_REPO_URI="https://github.com/jdx/mise.git"
 
 LICENSE="MIT"
 SLOT="0"
+KEYWORDS=""
+PROPERTIES="live"
 IUSE="bash-completion fish-completion zsh-completion"
 
 # mise links the system OpenSSL via the native-tls crate.

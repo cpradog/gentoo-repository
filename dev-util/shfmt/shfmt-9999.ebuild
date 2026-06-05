@@ -14,7 +14,8 @@ RESTRICT="network-sandbox strip"
 LICENSE="MIT"
 SLOT="0"
 IUSE="+man"
-KEYWORDS="~amd64 ~arm64 ~x86"
+KEYWORDS=""
+PROPERTIES="live"
 
 BDEPEND="
 	man? ( app-text/scdoc )

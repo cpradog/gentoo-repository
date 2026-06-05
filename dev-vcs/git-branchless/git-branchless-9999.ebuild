@@ -14,6 +14,8 @@ EGIT_REPO_URI="https://github.com/arxanas/git-branchless.git"
 LICENSE="MIT Apache-2.0"
 
 SLOT="0"
+KEYWORDS=""
+PROPERTIES="live"
 IUSE=""
 
 DEPEND="|| ( dev-lang/rust dev-lang/rust-bin )"

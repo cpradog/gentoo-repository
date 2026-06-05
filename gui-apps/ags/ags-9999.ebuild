@@ -10,7 +10,8 @@ HOMEPAGE="https://aylur.github.io/ags/"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
+PROPERTIES="live"
 IUSE=""
 
 DEPEND="

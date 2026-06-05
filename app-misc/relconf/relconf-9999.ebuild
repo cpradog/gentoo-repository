@@ -13,7 +13,8 @@ DESCRIPTION="Manage configuration depending to the current path"
 HOMEPAGE="https://github.com/kfkonrad/relconf"
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
+PROPERTIES="live"
 
 if [[ ${PV} == 9999 ]]; then
 	inherit git-r3

@@ -14,7 +14,8 @@ EGIT_REPO_URI="https://github.com/snare/voltron.git"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
+PROPERTIES="live"
 
 RDEPEND="
 	dev-python/scruffington

@@ -10,7 +10,8 @@ HOMEPAGE="https://aylur.github.io/astal/"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~amd64"
+KEYWORDS=""
+PROPERTIES="live"
 IUSE="+gtk3 +gtk4 +apps +auth +battery +bluetooth cava greetd hyprland +mpris +network +notifd +powerprofiles river +tray +wireplumber +gjs lua"
 
 PDEPEND="
