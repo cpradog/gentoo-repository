@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<use>
+		<flag name="bash-completion">Install completion files for the <pkg>app-shells/bash</pkg> shell</flag>
+		<flag name="fish-completion">Install completion files for the <pkg>app-shells/fish</pkg> shell</flag>
+		<flag name="zsh-completion">Install completion files for the <pkg>app-shells/zsh</pkg> shell</flag>
+	</use>
+	<upstream>
+		<bugs-to>https://github.com/jdx/mise/issues</bugs-to>
+		<remote-id type="github">jdx/mise</remote-id>
+	</upstream>
+</pkgmetadata>

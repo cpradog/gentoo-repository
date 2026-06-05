@@ -1,0 +1,1 @@
+message = "mise is installed and managed by Portage.\nTo update it, run:\n\n\tsudo emerge --ask --oneshot dev-util/mise\n"
