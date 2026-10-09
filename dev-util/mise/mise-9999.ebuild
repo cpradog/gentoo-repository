@@ -31,6 +31,16 @@ src_unpack() {
 	cargo_live_src_unpack
 }
 
+src_configure() {
+	# FIXME: aws-lc-sys 0.45.0 fails to strip -O* from CFLAGS for jitterentropy
+	# under cc 1.6, which snapshots the environment before the filter applies,
+	# and jitterentropy refuses to build with optimizations. Without it, AWS-LC
+	# seeds its DRBG from the kernel RNG instead.
+	export AWS_LC_SYS_NO_JITTER_ENTROPY=1
+
+	cargo_src_configure
+}
+
 src_install() {
 	cargo_src_install
 
